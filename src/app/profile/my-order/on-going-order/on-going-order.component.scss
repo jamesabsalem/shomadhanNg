@@ -1,0 +1,97 @@
+.ongoing {
+    border-bottom: #dadada solid .5px;
+    padding: 20px 50px;
+    color: #000;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Calibri;
+}
+
+.on-going-header {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 20px;
+    text-align: center;
+    display: block !important;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+.on-going-header .header-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+}
+
+.btn-view-details {
+    padding: 2px;
+    color: #000;
+}
+
+.btn-call-expart {
+    padding: 2px;
+    color: #000;
+}
+
+.Pending {
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #FEC107;
+}
+
+.Accepted {
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #0E7908;
+}
+
+.Ongoing {
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #9C40FF;
+}
+
+.Served {
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #1DB909;
+}
+
+.Canecl {
+    margin-right: 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #FE0913;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #FEC107;
+}

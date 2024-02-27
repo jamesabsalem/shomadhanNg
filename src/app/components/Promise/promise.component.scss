@@ -1,0 +1,15 @@
+.promise{
+    display: flex; flex-flow: row;justify-content: center;
+}
+.promise-body{
+    display: flex; flex-flow: column;justify-content: center;    margin-right: 3em;    
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+h2 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: 600;
+    margin: 36px 0 50px;
+}

@@ -1,0 +1,60 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="row">
+
+      <div class="offset-3 col-md-6">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Join With Us Today</h5>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClickClose()">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <form #submitForm="ngForm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="FullName.invalid && FullName.touched" [class.has-success]="FullName.valid">
+            <input type="text" #FullName="ngModel" [(ngModel)]="partner.FullName" name="FullName" required class="form-control"
+              placeholder="Full Name">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="Mobile.invalid && Mobile.touched" [class.has-success]="Mobile.valid">
+            <input type="text" #Mobile="ngModel" [(ngModel)]="partner.Mobile" name="Mobile" required class="form-control"
+              placeholder="Phone +880">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="AreaId.invalid && AreaId.touched" [class.has-success]="AreaId.valid">
+            <select class="form-control" #AreaId="ngModel" [(ngModel)]="partner.AreaId" required name="AreaId" style="width: 100%">
+              <option class="btn-new" value="0">Select Area</option>
+              <option class="btn-new " *ngFor="let area of areas" value="{{area.AreaId}}">{{area.AreaName}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="InnerCategoryId.invalid && InnerCategoryId.touched"
+            [class.has-success]="InnerCategoryId.valid">
+            <select class="form-control" #InnerCategoryId="ngModel" [(ngModel)]="partner.InnerCategoryId" required
+              name="InnerCategoryId" style="width: 100%">
+              <option class="btn-new " value="0">Select Service</option>
+              <option class="btn-new " *ngFor="let item of innerCategoryDetails" value="{{item.InnerCategoryId}}">{{item.Name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <button [disabled]="submitForm.invalid" (click)="onClickSubmit(partner)" class="btn btn-warning btn-block btn-signin">Submit</button>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>

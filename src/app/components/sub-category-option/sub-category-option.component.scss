@@ -1,0 +1,23 @@
+@import '~_variables.scss';
+
+.add_cart_size {
+  width: 40px;
+  text-align: center;
+  height: 30px;
+  font-size: 1.5em;
+}
+
+.final_step_wrapper {
+  margin: .8em;
+}
+
+.btn_add_cart {
+  color: #000 !important;
+  background: $button_base_color !important;
+  border: unset;
+
+  &:hover {
+    color: #000 !important;
+    background: darken($color: $button_base_color, $amount: 20%) !important;
+  }
+}

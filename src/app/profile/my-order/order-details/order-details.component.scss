@@ -1,0 +1,114 @@
+.details-body {
+    padding: 20px 50px;
+    color: #000;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #141414;
+    font-family: Calibri;
+}
+
+.header {
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ul.timeline>li {
+    margin: 20px 0;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ul.timeline>li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #FCC204;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+p {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+a {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+// ul {
+//     list-style: none;
+// }
+.btn-payment {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 60%;
+    background-color: #140D53;
+}
+
+.btn-invoice {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 60%;
+}
+
+.btn-profile-view {
+    padding: 3px;
+}
+
+.btn-call-expart {
+    padding: 3px;
+}
+
+.btn-reschedule {
+    padding: 3px;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: rgb(173, 169, 158);
+}
+
+.filled {
+    color: #F0B709;
+}
+
+.bad {
+    color: #deb0b0;
+}
+
+.filled.bad {
+    color: #ff1e1e;
+}

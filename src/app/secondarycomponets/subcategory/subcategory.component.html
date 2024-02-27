@@ -1,0 +1,37 @@
+<div class="row m-0 p-0" style="max-height: 400px;">
+  <div class="col-sm-12 d-flex justify-content-center">
+    <div class="container" style=" max-width: 750px;" class="d-flex justify-content-center">
+      <div class="card rounded-0" style="width: 30rem;">
+
+        <div class="card-header text-center">
+          <!-- <span>
+                    <i class="fa fa-chevron-right fa-rotate-180" aria-hidden="true"></i>
+                </span> -->
+          <span class="sub_category_title">{{subCategoryCaption}}</span>
+          <!-- <span></span> -->
+        </div>
+
+        <div class="text-center list_select_caption">Select your service type</div>
+
+        <div scrollSpyElement="test" style="max-height: 475px;width: 100%; overflow: auto;">
+          <ul class="list-group list-group-flush" id="test">
+            <li *ngFor="let subCategory of allSubcategories" class="list-group-item d-flex justify-content-between align-items-center"
+            (click)="openModalWithComponent(subCategory)">
+              <span>
+                <!-- <img class="media-object" width="40" height="40" [src]="subCategory.RefImg" alt=" " /> -->
+                <img class="media-object" width="40" height="40" src="{{subCategory.RefImg ? subCategory.RefImg : '/assets/img/img-placeholder.png'}}"
+                  alt=" " />
+                <span class="category_name_caption p-2">{{subCategory.Name}}</span>
+              </span>
+              <span>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openModalWithComponent(null)">Modal Popup</button> -->

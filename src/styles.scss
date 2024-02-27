@@ -1,0 +1,437 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~_variables.scss';
+
+.card {
+  box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+  // Override to prevent shaking card while hover
+  &:not(.card-plain):hover {
+    box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+    transform: translateY(0px) !important;
+    -webkit-transform: translateY(0px) !important;
+    -ms-transform: translateY(0px) !important;
+    -moz-transform: translateY(0px) !important;
+  }
+
+  &.card-plain {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  // card list hover effect
+  ul {
+    li {
+      &.list-group-item {
+        &:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.03);
+        }
+      }
+    }
+  }
+}
+
+.list_select_caption {
+  padding: 20px 0;
+  font-size: 1.3em;
+  border-bottom: 1px solid lightgray;
+}
+
+// Custom modal
+
+.modal-dialog {
+  &.custom_modal_wrapper {
+    top: 2em !important;
+    .modal-content {
+      height: 450px !important;
+      border-radius: 0 !important;
+
+      // .modal-body {
+      //   padding: 0;
+      // }
+    }
+  }
+
+  &.confirm_modal_wrapper {
+    top: 2em !important;
+    .modal-content {
+      height: 450px !important;
+      border-radius: 0 !important;
+
+      background: transparent;
+      box-shadow: unset;
+      border-radius: unset;
+    }
+  }
+}
+
+// radio button
+
+ul#question-and-option {
+  li {
+    &.list-group-item {
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.03);
+      }
+
+      .form-check-radio {
+        &:hover {
+          cursor: pointer;
+        }
+
+        .form-check-label {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+#question-and-option .form-check-radio {
+  margin-top: 5px;
+  margin-bottom: 5px !important;
+}
+
+#question-and-option .form-check-radio .form-check-label {
+  padding-left: 1rem;
+}
+
+#question-and-option .form-check-radio .form-check-sign::before {
+  left: unset !important;
+  right: 5px !important;
+}
+
+#question-and-option .form-check-radio input[type='radio']:checked + .form-check-sign::after {
+  left: unset !important;
+  right: 5px !important;
+}
+
+// FAQ Section
+.faq_wrapper {
+  .card {
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+
+    &:not(.card-plain):hover {
+      box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+      transform: translateY(0px) !important;
+      -webkit-transform: translateY(0px) !important;
+      -ms-transform: translateY(0px) !important;
+      -moz-transform: translateY(0px) !important;
+    }
+
+    .faq_header:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .schedule_carousel > .ngucarousel > .ngucarousel-inner > .ngucarousel-items > .item {
+    flex: 0 0 19.333333% !important;
+  }
+}
+
+// Next button
+.next_button {
+  // color: #fff;
+  width: 100px;
+  text-align: center;
+}
+
+.modal-footer {
+  background: #fff;
+}
+
+.custom_modal_footer {
+  background: #fff;
+  padding-right: 2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.custom_modal_header {
+  display: flex !important;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom_modal_body {
+  padding: 0 !important;
+}
+
+.caption_text {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.badge_base_color {
+  background-color: $base_color;
+  font-size: 0.8em;
+}
+
+// Custom buttons
+
+.btn_next {
+  color: #000 !important;
+  background: $button_base_color !important;
+  border: unset;
+
+  &:hover {
+    color: #000 !important;
+    background: darken($color: $button_base_color, $amount: 20%) !important;
+  }
+}
+
+.btn_continue {
+  color: #000;
+  background: $button_base_color !important;
+  border: unset;
+
+  &:hover {
+    color: #000;
+    background: darken($color: $button_base_color, $amount: 20%) !important;
+  }
+}
+
+.btn_checkout {
+  color: #000 !important;
+  background: $button_base_color !important;
+  border: unset;
+
+  &:hover {
+    color: #000 !important;
+    background: darken($color: $button_base_color, $amount: 20%) !important;
+  }
+}
+
+.btn_print {
+  float: right;
+  color: #000 !important;
+  background: $button_base_color !important;
+  border: unset;
+
+  &:hover {
+    color: #000 !important;
+    background: lighten($color: $button_base_color, $amount: 20%);
+  }
+}
+
+// app-navbar, app-footer {
+//   display: none  !important;
+// }
+
+app-invoice + app-footer {
+  display: none !important;
+}
+
+app-invoice-footer > img {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  bottom: 0;
+}
+
+.invoice_table {
+  &.table-bordered td,
+  &.table-bordered th {
+    // border: unset !important;
+    border-right: unset;
+    border-left: unset;
+  }
+  // width: 90%;
+}
+
+app-invoice-order-list {
+  display: flex;
+  justify-content: center;
+}
+
+.inovice_details_wrapper {
+  .invoice_details {
+    padding: 3em;
+    min-height: 600px;
+    height: 90vh;
+
+    .delivery_details {
+      padding-bottom: 1em;
+
+      .bill_to_wrapper {
+        .name {
+          font-size: 1.1em;
+          font-weight: bold;
+        }
+      }
+
+      .invoic_no_wrapper {
+        .invoic {
+          font-size: 1.1em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .order_id_wrapper {
+    padding: 1.5em 0;
+
+    .order_id,
+    .provider {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.total_amount_wrapper {
+  border: 1px solid lightgray;
+  width: 400px;
+  float: right;
+
+  .save_percent_text {
+    background: lightgreen;
+  }
+
+  .total_bill,
+  .shomadhan_discount,
+  .payable_amount {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em;
+  }
+
+  .total_bill {
+    border-bottom: 1px solid lightgray;
+
+    .orginal_price_text {
+      text-decoration: line-through;
+      text-decoration-color: red;
+    }
+  }
+
+  .payable_amount {
+    background: $base_color;
+  }
+}
+
+.btn_print_wrapper {
+  position: relative;
+  top: 1em;
+  right: 1em;
+}
+
+.footer_wrapper {
+  background: #fff;
+  position: relative;
+  bottom: 0;
+}
+
+.invoice_table {
+  thead {
+    background: lightgray;
+  }
+}
+
+.discounted_price_info_wrapper {
+  background: $base_color;
+  margin: 1em;
+  height: 3.5em;
+  box-shadow: 0px 10px 9px -7px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem !important;
+
+  &:not(.card-plain):hover {
+    box-shadow: 0px 10px 9px -7px rgba(0, 0, 0, 0.3);
+    // transform: translateY(0px) !important;
+    // -webkit-transform: translateY(0px) !important;
+    // -ms-transform: translateY(0px) !important;
+    // -moz-transform: translateY(0px) !important;
+  }
+}
+
+.discount_list {
+  display: flex;
+  justify-content: unsafe;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 2em;
+  font-size: .8em !important;
+}
+
+@media (max-width: 767px) {
+  .discounted_price_info_wrapper {
+    .navbar-nav {
+      margin: unset;
+    }
+  }
+}
+
+.total_save_percent {
+  padding: 0.3em;
+  line-height: unset;
+  width: 6em;
+}
+
+.discounted_price {
+  background: unset;
+  border: 0.2em solid;
+  line-height: unset;
+  margin-left: 1em;
+}
+
+.items_wrapper {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.original_price {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.total_service_badge {
+  background: unset;
+  border: 0.2em solid;
+  line-height: unset;
+  margin-left: 1em;
+}
+
+.discounted_price_info_wrapper {
+  li.list-inline-item:not(:last-child):after {
+    content: '';
+    border: 1px solid;
+    height: 3em;
+    margin-left: 2em;
+    background: black;
+  }
+}
+
+// . {
+//   font-size: .8em !important;
+// }
+
+.swal-button {
+  background: $base_color;
+}
+
+.swal-icon--info {
+  border-color: $base_color;
+
+  &::after,
+  &::before {
+    background-color: $base_color;
+  }
+}
+
+.category_title {
+  font-size: 1.5em;
+}
+
+ngx-tile {
+  .tile:hover {
+    cursor: pointer;
+  }
+}

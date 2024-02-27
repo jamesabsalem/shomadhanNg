@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div class="input-group text-center">
+                <div class="input-group-prepend dropdown-search">
+                    <select class="btn btn-outline-secondary" [(ngModel)]="selectLocation" (change)="onChange($event)"
+                        style="width: 296px">
+                        <option class="btn btn-outline-secondary" value="0">Select Area</option>
+                        <option class="btn btn-outline-secondary" *ngFor="let area of areas" value="{{area.AreaId}}">{{area.AreaName}}</option>
+                    </select>
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="fa fa-search fa-2x"></i>
+                    </button>
+                    <input class="input-search" type="text" placeholder="Search for a service e.g. AC" matInput
+                        [formControl]="myControl" [matAutocomplete]="auto" (keyup)="onKey($event)">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Name">
+                            <img [src]="option.RefImg" style="width: 30px; margin-right: 5px;" alt="">
+                            <span>{{option.Name}}</span>
+                        </mat-option>
+                    </mat-autocomplete>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

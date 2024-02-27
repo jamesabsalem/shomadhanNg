@@ -1,0 +1,134 @@
+.mini-submenu{
+    display:none;  
+    background-color: rgba(0, 0, 0, 0);  
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 9px;  
+    /*position: relative;*/
+    width: 42px;
+  
+  }
+  
+  .mini-submenu:hover{
+    cursor: pointer;
+  }
+  
+  .mini-submenu .icon-bar {
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    width: 22px;
+    margin-top: 3px;
+  }
+  
+  .mini-submenu .icon-bar {
+    background-color: #000;
+  }
+  
+  #slide-submenu{
+    background: rgba(0, 0, 0, 0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  a{
+      color: #212020;
+      font-weight: bold;
+      cursor: pointer;
+  }
+  a:hover{
+    background-color:rgb(238, 236, 229);
+}
+.router-link-active{
+  color:  #212020;
+  background-color: #FFC30D
+}
+
+.my-profile-left-image {
+  margin-top: 10px;
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.my-profile-content {
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.my-profile-header {
+  border-bottom: 1px solid #DDDDDD;
+  padding: 20px;
+  text-align: center;
+  display: block !important;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+}
+
+.my-profile-header .header-title {
+  color: #333333;
+}
+
+.header-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: left
+}
+
+.my-profile-body {
+  padding: 20px 50px;
+  color: #000;
+  position: relative;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #767676;
+  font-family: Calibri;
+}
+
+.my-profile-body {
+  color: #484848;
+}
+
+.my-profile-info .row {
+  border-bottom: #979797 solid .5px;
+  padding: 10px
+}

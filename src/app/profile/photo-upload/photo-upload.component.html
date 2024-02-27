@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="row">
+      <div class="offset-3 col-md-6">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Profile Photo Upload</h5>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="close" (click)="onClickClose()">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <div>
+              <div>
+                <input type="file" (change)="fileChangeEvent($event)" />
+
+                <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+                  [resizeToWidth]="128" format="png" (imageCroppedBase64)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+                  (loadImageFailed)="loadImageFailed()"></image-cropper>
+                <img [src]="croppedImage" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <button type="button" [disabled]="!croppedImage" (click)="onClickImageUpload()" class="btn btn-warning btn-block btn-signin">Upload</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

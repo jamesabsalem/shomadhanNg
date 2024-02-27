@@ -1,0 +1,35 @@
+<!-- <div class="modal-header text-left rounded-0" style="height: 60px;">
+  <span>
+    <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i>
+  </span>
+  <span>Schedule your service</span>
+  <span class="close pull-right p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div> -->
+
+<div class="custom_modal_header rounded-0" style="height: 60px;">
+  <span>
+    <!-- <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i> -->
+  </span>
+  <span class="caption_text">{{title}}</span>
+  <span class="close p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div>
+
+<div class="modal-body rounded-0 custom_modal_body">
+  <div scrollSpyElement="test" style="height: 380px;  width: 100%; overflow: auto;">
+    <app-signin *ngIf="isShowSignin"></app-signin>
+    <app-schedule *ngIf="isShowSchedule" [scheduleSelectionData$]="scheduleSelectionData$"></app-schedule>
+    <app-service-partner *ngIf="isShowServicePartner"  [servicePartnerData$]="servicePartnerData$" [scheduleInfo]="scheduleInfo"></app-service-partner>
+    <app-delivery-details *ngIf="isShowDeliveryDetails" [deliveryDetailsData$]="deliveryDetailsData$"></app-delivery-details>
+    <app-order-summary *ngIf="isShowOrderSummary" [scheduleInfo]="scheduleInfo" [servicePartnerInfo]="servicePartnerInfo" [deliveryInfo]="deliveryInfo" #orderSummary></app-order-summary>
+  </div>
+</div>
+
+<div class="modal-footer custom_modal_footer">
+  <button [hidden]="isShowOrderSummary" (click)="onOrderPlacementNextHandler()" type="button" class="btn btn_continue btn-sm border-0 rounded-0 next_button" style="color:black">{{nextButtonText}}</button>
+
+  <button [hidden]="!isShowOrderSummary" (click)="onCheckoutClickHandler()" type="button" class="btn btn_checkout btn-sm border-0 rounded-0 next_button" style="color:black">Checkout</button>
+</div>

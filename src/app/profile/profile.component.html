@@ -1,0 +1,38 @@
+<!-- <app-main-service-nav></app-main-service-nav> -->
+<div class="section" style="border-top: 1px solid #e2e2e2; margin-top: 25px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group">
+          <a class="list-group-item" routerLink="my-profile" routerLinkActive="router-link-active">
+            <i class="fa fa-user"></i> My Profile
+          </a>
+          <a class="list-group-item" routerLink="my-order" routerLinkActive="router-link-active">
+            <i class="fa fa-clipboard"></i> My Order
+          </a>
+          <a class="list-group-item" routerLink="my-wallet" routerLinkActive="router-link-active">
+            <i class="fa fa-google-wallet"></i> My Wallet
+          </a>
+          <a class="list-group-item" routerLink="refer-earn" routerLinkActive="router-link-active">
+            <i class="fa fa-folder-open-o"></i> Refer & Earn
+          </a>
+          <a class="list-group-item" routerLink="promotions" routerLinkActive="router-link-active">
+            <i class="fa fa-bullhorn"></i> Promotions
+          </a>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="my-profile-left-image">
+              <img src="././../../assets/img/profile/profile-left.jpg" alt="" class="img-container img-responsive img-rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="my-profile-content h-100">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

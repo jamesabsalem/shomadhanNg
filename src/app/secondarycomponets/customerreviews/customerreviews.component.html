@@ -1,0 +1,37 @@
+<div class="customer-review">
+    <div class="customer-review-header">
+        <h5>Our Valuable Customer Reviews</h5>
+    </div>
+    <div class="customer-review-body" *ngFor="let item of customerReview  | paginate: { itemsPerPage: 3, currentPage: p };">
+        <div class="row">
+            <!-- <div class="col-md-2 text-center">
+                <img class="img img-circle" width="70" height="70" src="{{item.ProfilePic}}">
+            </div> -->
+            <div class="col-md-2 text-center" *ngIf="item.ProfilePic!='';else image">
+                <img class="img img-circle" width="70" height="70" src="{{item.ProfilePic}}" />
+            </div>
+            <ng-template class="col-md-2 text-center" #image>
+                <img class="img img-circle" src="../../../assets/img/profile/icon_profile.png" />
+            </ng-template>
+            <div class="col-md-6">
+                <h5>{{item.FullName}}</h5>
+                <span>{{item.DateAdded| date: 'MMM d, y'}}</span>
+            </div>
+            <div class="col-md-4">
+                <ngb-rating [(rate)]="item.FeedBackRating" class="float-right">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{item.Comment}}
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+:host {
+  height: 100% !important;
+}
+
+.order_confirm_popup_wrappeer {
+  // width: 250px;
+  // height: 186px;
+  // border: 1px solid;
+  // position: relative;
+  // margin-top: 25%;
+  // margin-left: 25%;
+  // background: #fff;
+}
+
+.parent {
+  background-color: rgba(0,0,0,0.5);
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  // background-color: rgba(128,128,128,0);
+  background: #fff;
+}
+
+.confirm_modal_header {
+  border-bottom-color: #b8dce4;
+  padding: 15px;
+}
+
+.confirm_modal_footer {
+  border-top: unset;
+  padding-right: unset;
+  padding-bottom: 1rem;
+}
+
+.confirm_modal_body {
+  // padding: 100px 120px;
+
+  .submited_text {
+    color: #47c0e7;
+  }
+}

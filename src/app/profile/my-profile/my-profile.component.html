@@ -1,0 +1,66 @@
+<div class="my-profile-header">
+  <h5 class="header-title">Profile Information</h5>
+</div>
+<div class="my-profile-body">
+  <div class="row">
+    <div class="col-2">
+      <div *ngIf="customer.ProfilePic!='';else user">
+        <img class="dropbtn" (click)="onClickProfilePhoto()" class="btn btn-nature img img-circle img-responsive" style="width:100px;"
+          [src]="customer.ProfilePic" />
+      </div>
+      <ng-template #user>
+        <img class="dropbtn" (click)="onClickProfilePhoto()" class="btn btn-nature img img-circle img-responsive" style="width:100px;"
+          src="../../../assets/img/profile/icon_profile.png" />
+      </ng-template>
+    </div>
+    <div class="col-10">
+      <div class="col-12 my-profile-info">
+        <div class="row">
+          <div class="col-8">Name:
+            <span>{{customer.FullName}}</span>
+          </div>
+          <div class="col-4">
+            <i class="fa fa-pencil float-right" (click)="onClickEdit()"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Phone:
+            <span>{{customer.Mobile}}</span>
+          </div>
+          <div class="col-4">
+            <span class="label label-success">Verified</span>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Email:
+            <span>{{customer.Email}}</span>
+          </div>
+          <div class="col-4">
+            <span class="label label-warning">Verify</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Address:
+            <span>{{customer.Address1}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Date Of Birth:
+            <span>{{customer.JoiningDate | date}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Gender:
+            <span>Male</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">Password:
+            <span>Change Password</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

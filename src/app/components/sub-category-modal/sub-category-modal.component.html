@@ -1,0 +1,14 @@
+<div [hidden]="showSubCatgoryOption || showOrderPlacementStep" class="sub-category">
+  <app-sub-category-question [subCategory]="subCategory" [showLastStepData]="showLastStepData" (showSubCategoryOption)="onShowCategoryOptionHandler($event)"></app-sub-category-question>
+</div>
+
+<div [hidden]="!showSubCatgoryOption || showOrderPlacementStep" class="sub_category_option">
+  <app-sub-category-option [serviceData]="serviceData" [subCategory]="subCategory" [orderPlacementStep]="orderPlacementStep$" [showSubCatgoryOptionBackButton]="isShowSubCatgoryOptionBackButton" [subCategoryCustomerResponse]="subCategoryCustomerResponse" (showSubCategoryQuestion)="onShowSubCategoryQuestionHandler($event)"></app-sub-category-option>
+</div>
+
+<div [hidden]="showSubCatgoryOption || !showOrderPlacementStep">
+  <app-order-placement></app-order-placement>
+</div>
+
+
+<!-- <app-order-placement></app-order-placement> -->

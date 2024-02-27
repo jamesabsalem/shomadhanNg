@@ -1,0 +1,40 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="row">
+      <div class="col-md-4">
+        <button type="button" class="close float-left" (click)="locationLeftArrow()">
+          <span>
+            <i class="fa fa-arrow-left"></i>
+          </span>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Location</h5>
+      </div>
+      <div class="col-md-4">
+        <button type="button" class="close" (click)="locationClose()">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <div class="input-group">
+      
+                  <select class="btn btn-neutral" [(ngModel)]="selectLocation" (change)="onChange($event)" style="width: 100%">
+                      <option class="btn btn-neutral" value="0">Select Area</option>
+                      <option class="btn btn-neutral" *ngFor="let area of areas" value="{{area.AreaId}}">{{area.AreaName}}</option>
+                  </select>
+             
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>

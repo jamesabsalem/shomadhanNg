@@ -1,0 +1,72 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="close float-left" data-dismiss="modal" aria-label="Close" (click)="signUpLeftArrow()">
+                    <span>
+                        <i class="fa fa-arrow-left"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Sign Up</h5>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="signUpClose()">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form #signUpForm="ngForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" [class.has-danger]="FullName.invalid && FullName.touched" [class.has-success]="FullName.valid">
+                        <input type="text" #FullName="ngModel" [(ngModel)]="customer.FullName" name="FullName" required class="form-control" placeholder="Delivery Name">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group" [class.has-danger]="Mobile.invalid && Mobile.touched" [class.has-success]="Mobile.valid">
+                        <input type="text" #Mobile="ngModel" [(ngModel)]="customer.Mobile" name="Mobile" required class="form-control" placeholder="+880 Mobile Number">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group" [class.has-danger]="Password.invalid && Password.touched" [class.has-success]="Password.valid">
+                        <input type="password" minlength="6" #Password="ngModel" [(ngModel)]="customer.Password" name="Password" required class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group" [class.has-danger]="Address1.invalid && Address1.touched" [class.has-success]="Address1.valid">
+                        <input type="text" #Address1="ngModel" [(ngModel)]="customer.Address1" name="Address1" required class="form-control" placeholder="Type Address">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button  class="btn btn-warning btn-block btn-signin" (click)="onClickSignUp(customer)">Sign Up</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <p class="terms-condition">By singing up, I agree to the
+                            <span>Terms & Condition</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <p class="already">Already have an account?
+                            <a  style="cursor: pointer;" (click)="onClickSignInLink()">Sign In</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+<!-- [disabled]="signUpForm.invalid" -->

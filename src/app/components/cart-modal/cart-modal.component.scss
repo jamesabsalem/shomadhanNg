@@ -1,0 +1,17 @@
+.modal-dialog {
+  &.custom_modal_wrapper {
+    top: 2em !important;
+    .modal-content {
+      height: 450px !important;
+      // border-radius: 0 !important;
+    }
+  }
+}
+
+.form-check-radio {
+  top: 6px;
+}
+
+.modal_back_btn {
+  cursor: pointer;
+}

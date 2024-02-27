@@ -1,0 +1,58 @@
+<!-- <div class="modal-header bg-warning text-left rounded-0" style="height: 60px;">
+  <span>
+    <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i>
+  </span>
+  <span class="close pull-right p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div>
+
+<div class="modal-body rounded-0"> -->
+
+
+  <!-- <div class="text-center list_select_caption">Schedule your service</div> -->
+
+  <!-- <div scrollSpyElement="test" style="height: 380px;  width: 100%; overflow: auto;"> -->
+    <form [formGroup]="scheduleDateForm" class="schedule_date_form">
+      <div class="schedulate_text">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        Select schedule date</div>
+      <div class="btn-group btn-group-toggle schedule_date_wrapper pt-2" ngbRadioGroup name="radioScheduleDate" formControlName="date">
+        <ngu-carousel [inputs]="carouselTile" (initData)="initDataFn($event)" (carouselLoad)="carouselTileLoad($event)" class="schedule_carousel">
+
+          <ngu-tile NguCarouselItem *ngFor="let schDate of scheduleDates">
+
+            <ng-container>
+              <div class="btn-group btn-group-toggle" style="width: 100%">
+                <label ngbButtonLabel class="btn-primary schedule_date_card">
+                  <input ngbButton type="radio" [value]="schDate.fullDate">
+                  <span class="d-flex flex-column">
+                    <span class="sch_month">{{schDate.month}}</span>
+                    <span class="sch_date">{{schDate.date}}</span>
+                    <span class="sch_day">{{schDate.day}}</span>
+                  </span>
+                </label>
+              </div>
+            </ng-container>
+          </ngu-tile>
+          <span NguCarouselPrev class='leftRs navigation_arrow'><i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </span>
+          <span NguCarouselNext class='rightRs navigation_arrow'><i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </span>
+        </ngu-carousel>
+      </div>
+    </form>
+
+    <form [formGroup]="scheduleTimeForm" class="pt-2 schedule_time_form">
+      <div class="schedule_time_text">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        Select schedule time</div>
+
+      <div class="btn-group btn-group-toggle schedule_time_radio_group_wrapper pt-2" ngbRadioGroup name="radioScheduleTime" formControlName="time">
+        <label *ngFor="let schTime of scheduleTimes" ngbButtonLabel class="btn-primary schedule_time_radio">
+          <input ngbButton type="radio" [value]="schTime.ServiceScheduleTimeId"> {{schTime.TimeSlot}}
+        </label>
+      </div>
+    </form>
+  <!-- </div> -->
+<!-- </div> -->

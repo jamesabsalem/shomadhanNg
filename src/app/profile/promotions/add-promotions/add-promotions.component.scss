@@ -1,0 +1,50 @@
+.prom-body {
+    color: #7D797A;
+    font-size: 15px;
+}
+
+.promo-header {
+    color: black;
+    font-size: 20px;
+}
+
+.btn-promo {
+    padding: 2px !important;
+    color: black;
+}
+
+.inpur-promo {
+    font-size: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 3px solid #C9C9C9;
+    width: 100%;
+}
+
+::placeholder {
+    color: #B7B7B7;
+    opacity: 1;
+    /* Firefox */
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #B7B7B7;
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #B7B7B7;
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+}

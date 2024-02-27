@@ -1,0 +1,73 @@
+.section {
+    font-family: Montserrat, Helvetica, Arial, sans-serif
+}
+
+.footer .credits,
+.footer-nav {
+    line-height: 50px;
+    text-align: center;
+    background: whitesmoke;
+}
+
+.section-footer {
+    padding: 18px 0;
+    background: #EEEEEE;
+    border-top: 1px solid #e2e2e2;
+
+}
+
+.section-light {
+    background: #EEEEEE;
+    color: black;
+    padding-top: 10px;
+}
+
+.mycontent-left {
+    border-left: 2px solid #ffff;
+}
+
+.description {
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 3em;
+    color: #333333;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 26px;
+    text-align: left;
+    font-weight: 600;
+    margin: 36px 0 50px;
+}
+
+.about {
+    display: flex;
+    flex-flow: column;
+}
+
+.about a {
+    font-weight: bold;
+}
+
+.header h2 {
+    margin: 0px;
+    font-size: 17px;
+}
+
+.social-icon a {
+    margin: 5px;
+}
+
+.section-footer {
+    background-color: #FFFFFF;
+    font-size: 20px;
+}
+
+.section-footer span {
+    color: #333132;
+}

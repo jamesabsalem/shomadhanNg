@@ -1,0 +1,42 @@
+.available-areas {
+    background-color: #FFFFFF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #434343;
+}
+
+.ongoing {
+    border-bottom: #dadada solid .5px;
+    padding: 20px 50px;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Calibri;
+}
+
+.available-area-header {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 20px;
+    text-align: center;
+    display: block !important;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+.available-area-header .header-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: left;
+}

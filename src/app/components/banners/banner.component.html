@@ -1,0 +1,16 @@
+<div class="" id="carousel">
+    <div class="">
+        <div class="row mr-auto ml-auto">
+            <div class="card page-carousel">
+                <ngb-carousel>
+                    <ng-template *ngFor="let tile of bannerImage" ngbSlide>
+                        <img class="img-fluid img-responsive banner-image banner-image-new" style="height: 550px;" src="{{tile.BannerImg}}" alt="{{tile.Title}}">
+                        <div class="carousel-caption banner-image-caption">
+                            <h2 style="background-color: #0000006b;font-weight: 700;display: inline-block;padding-left: 20px;padding-right: 20px;">{{tile.Title}}</h2>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+        </div>
+    </div>
+</div>

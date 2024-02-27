@@ -1,0 +1,57 @@
+<!-- <div class="modal-header bg-warning text-left rounded-0" style="height: 60px;">
+  <span *ngIf="currentStep !== 1" (click)="onBackButtonClicked()">
+    <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i>
+  </span>
+  <span class="close pull-right p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div> -->
+
+<div class="custom_modal_header rounded-0" style="height: 60px;">
+  <span [hidden]="currentStep === 1" (click)="onBackButtonClicked()">
+    <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i>
+  </span>
+  <span *ngIf="currentStep === 1"></span>
+  <span class="caption_text">{{ subCategoryCaption }}</span>
+  <span class="close p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div>
+
+
+<div *ngIf="!showSubCatgoryOption" class="modal-body rounded-0 custom_modal_body">
+  <div *ngIf="!!questionAndOptions.Question" class="text-center list_select_caption">{{questionAndOptions.Question.QName}}</div>
+
+  <div scrollSpyElement="subCategoryQuesScrollSpy" scrollSpy style="height: 325px;  width: 100%; overflow: auto; background: #fff">
+
+    <ul *ngIf="!!questionAndOptions.Options" class="list-group list-group-flush" id="question-and-option">
+      <li *ngFor="let option of questionAndOptions.Options" class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="form-check-radio  w-100">
+          <label class="form-check-label w-100">
+            <span>{{option.QResponseName}}</span>
+
+            <input [(ngModel)]="questionAndOptions.CustomerResponse.ServiceQResponseId" class="form-check-input" type="radio" [checked]="questionAndOptions.CustomerResponse.ServiceQResponseId === option.ServiceQResponseId"
+              name="ServiceQuestionId-{{option.ServiceQuestionId}}" id="option-{{option.SlNo}}" [value]="option.ServiceQResponseId">
+
+            <span class="form-check-sign"></span>
+          </label>
+        </div>
+      </li>
+
+      <li *ngIf="questionAndOptions.Question.IsAdditionalField" class="additional_question_text pt-5 pl-2 pr-2">
+        <div class="form-group">
+          <input [(ngModel)]="questionAndOptions.CustomerResponse.ResponseText" type="text" class="form-control" id="additional_question_text"
+            placeholder="Additional Message">
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- <button (click)="onNextBtnClicked(questionAndOptions)" type="button" class="btn btn-warning btn-lg btn-block border-0 rounded-0"
+    style="position: relative; top: -4px">NEXT</button> -->
+</div>
+
+<div class="modal-footer custom_modal_footer">
+  <button (click)="onNextBtnClicked(questionAndOptions)" type="button" class="btn btn_next btn-sm border-0 rounded-0 next_button">NEXT</button>
+</div>

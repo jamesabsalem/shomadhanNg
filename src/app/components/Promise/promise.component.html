@@ -1,0 +1,13 @@
+<div class="" style="    border-top: 1px solid #e2e2e2;">
+    <div class="container" style="     max-width: 1000px;   padding: 0px; ">
+        <h2>Our Promises</h2>
+        <div class="row">
+            <div class="col-md-12 mr-auto ml-auto promise">
+                <div class="promise-body" *ngFor="let tile of promises">
+                    <img src="{{tile.RefImg}}" class="img-fluid">
+                    <p style="font-weight: bold">{{tile.Name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

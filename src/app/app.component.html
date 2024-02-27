@@ -1,0 +1,4 @@
+<app-navbar [hidden]="removeHeader()"></app-navbar>
+<app-main-service-nav [hidden]="removeMainServiceNav()"></app-main-service-nav>
+<router-outlet></router-outlet>
+<app-footer *ngIf="removeFooter()"></app-footer>

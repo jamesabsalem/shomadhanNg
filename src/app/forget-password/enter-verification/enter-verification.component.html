@@ -1,0 +1,33 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Varification Code</h5>
+        <h6 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Please enter the code which send to you</h6>
+      </div>  
+    </div>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="text" name="code" [(ngModel)]="verificationCode" required class="form-control" max="6" type="number"
+              placeholder="Varification Code">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+             
+            <button type="submit"  (click)="verifyLoginCode()" class="btn btn-warning btn-block btn-signin">Verify</button>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group text-center">
+            <p>Don't have received a code <a href="">Re-send code</a></p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

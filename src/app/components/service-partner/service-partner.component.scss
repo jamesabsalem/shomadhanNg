@@ -1,0 +1,61 @@
+@import '~_variables.scss';
+$rating_badge: #00a650;
+
+ul.service_partner_wrapper {
+  .view_profile_button {
+    border-color: $base_color;
+    font-size: 0.5rem;
+    text-transform: unset;
+    color: #000;
+
+    &:active, &:visited {
+      border-color: $base_color;
+      color: #000;
+      background: transparent;
+    }
+  }
+
+  .chose_partner {
+    font-size: 0.5rem;
+    text-transform: unset;
+    color: #000;
+    background-color: #ffc30d;
+    border-color: #ffc30d;
+  }
+
+  .custom_media_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & li {
+    padding: 0.5rem 1.5rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+
+  .custom_badge_size {
+    padding: 0.4em 0.8em;
+    background-color: $rating_badge;
+  }
+}
+
+ngb-rating {
+  color: $base_color !important;
+}
+
+.partner_active {
+  // background: lightgray;
+  // border-color: lightgray;
+  color: #000;
+  background-color: lighten($color: $button_base_color, $amount: 20%) !important;
+  border-color: lighten($color: $button_base_color, $amount: 20%) !important;
+}
+
+.partner_imge {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #fbc962;
+}

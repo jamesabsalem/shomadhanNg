@@ -1,0 +1,64 @@
+.btn-mobile {
+    background-color: #140D53;
+    color: #fff;
+    border-color: #140D53;
+    text-transform: capitalize;
+}
+
+.btn-facebook-new {
+    background-color: #3B97FE;
+    color: #fff;
+    border-color: #3B97FE;
+    text-transform: capitalize;
+}
+
+.btn-google-plus {
+    background-color: #FFFFFF;
+    color: black;
+    border-color: #DCDCDC;
+    text-transform: capitalize;
+}
+
+.btn-signin {
+    text-transform: capitalize;
+}
+
+.signin-mobile-icon {
+    background-image: url('/assets/img/signin/icon_mobile.png');
+    height: 22px;
+    width: 20px;
+    display: inline-block;
+    
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -30px;
+    top: 8px;
+}
+
+.signin-facebook-icon {
+    background-image: url('/assets/img/signin/icon_facebook.png');
+    height: 22px;
+    width: 20px;
+    display: inline-block;
+
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -30px;
+    top: 8px;
+}
+
+.signin-google-plus-icon {
+    background-image: url('/assets/img/signin/icon_google_plus.png');
+    height: 22px;
+    width: 20px;
+    display: inline-block;
+
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -30px;
+    top: 8px;
+}
+.already a{
+    font-weight: bold;
+    color:#1A88E9;
+}

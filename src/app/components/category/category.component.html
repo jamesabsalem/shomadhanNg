@@ -1,0 +1,94 @@
+
+  <!-- <ngx-carousel class="banner" [inputs]="carouselBanner" (carouselLoad)="carouselBannerLoad()">
+    <ngx-item NgxCarouselItem *ngFor="let tile of carouselBannerItems; let i = index;">
+        <div class="bannerStyle" [style.background]="'url(' + tile + ')'">
+            <h1>{{i}}</h1>
+        </div>
+    </ngx-item>
+    <button NgxCarouselPrev class="leftRs">&lt;</button>
+    <button NgxCarouselNext class="rightRs">&gt;</button>
+  </ngx-carousel>-->
+  
+   <!--Main-->
+   
+   <div class="container" style="    max-width: 1300px; display: flex;flex-flow: column;">
+        <h2 style="text-align: center;">Service Category</h2>
+        <ngx-carousel [inputs]="carouselTile" (carouselLoad)="carouselTileTwoLoad()">
+            <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItems; let i = index;">
+                    
+                  
+                 <div class="wBg" >
+                    <div class="">
+                           
+                            <a href="">
+                                <div class="img-category valign-wrapper" style="align-items: center;">
+                                    <img src="{{tile}}" alt="" class="" width="100%" height="100%">
+                                </div>
+                                <p class="valign-wrapper">
+                                    <span class="line-clamp line-clamp-2 ">{{i}}</span>
+                                </p>
+                            </a>                   
+                    </div>               
+                   
+                </div>
+            </ngx-tile>
+            <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left.png)"></button>
+            <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right.png)"></button>
+        </ngx-carousel>
+   </div>
+
+   
+    <div class="container">
+    <h2>Inner Category</h2>
+    <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+            <div class="wBg">
+                <div class="tile" [style.background]="'url(' + tile + ')'">
+                    <h1>{{i}}</h1>
+                </div>
+                <h4>Tile</h4>
+               
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left.png)"></button>
+        <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right.png)"></button>
+    </ngx-carousel>
+  
+    <h2>Sub Category</h2>
+    <ngx-carousel [inputs]="carouselTileTwo" (carouselLoad)="carouselTileTwoLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileTwoItems; let i = index;">
+            <div class="wBg">
+                <div class="tile" [style.background]="'url(' + tile + ')'">
+                    <h1>{{i}}</h1>
+                </div>
+                <h4>Tile</h4>
+                <p>content</p>
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left.png)"></button>
+        <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right.png)"></button>
+    </ngx-carousel>
+    
+    <h2>Sub Category</h2>
+    <ngx-carousel [inputs]="carouselTileTwo" (carouselLoad)="carouselTileTwoLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileTwoItems; let i = index;">
+               
+              
+             <div class="wBg">
+                <div class="">
+                    
+                    <input  class="tile" type="button" [style.background]="'url(' + tile + ')'" style="    width: 100%;"/>
+                   
+                </div>
+                <h4 class="button">Tile</h4>
+               
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left.png)"></button>
+        <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right.png)"></button>
+    </ngx-carousel>
+    
+    
+
+  </div>
+  

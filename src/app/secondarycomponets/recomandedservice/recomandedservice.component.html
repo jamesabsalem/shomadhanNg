@@ -1,0 +1,29 @@
+<div class="available-areas">
+    <div class="available-area-header">
+        <h5 class="header-title">Recomended Services</h5>
+    </div>
+    <div class="ongoing">
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngFor="let item of recomandedService">
+                    <div class="row">
+                        <div class="col-4">
+                            <!-- <img src="{{item.RefImg}}" class="img img-container" width="50" height="50"> -->
+
+                            <div *ngIf="item.RefImg!='';else user">
+                                <img src="{{item.RefImg}}" class="img img-container" width="50" height="50" />
+                            </div>
+                            <ng-template #user>
+                                <img class="img img-container" width="50" height="50" src="../../../assets/img/no_image_available.jpg" />
+                            </ng-template>
+                        </div>
+                        <div class="col-8">
+                            {{item.InnerCategoryName}}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

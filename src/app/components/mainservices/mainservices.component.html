@@ -1,0 +1,40 @@
+<div class="">
+    <div class="container" style="max-width: 1300px; display: flex;flex-flow: column;">
+        <h2>Our Services</h2>
+        <ngx-carousel *ngIf="carouselTileItems" [inputs]="carouselTile" (carouselLoad)="carouselTileTwoLoad()" style="text-align: center;">
+            <!-- <ngx-tile NgxCarouselItem  (click)="onShomadhanAssistantClickHandler($event)">
+                <div class="wBg text-center">
+                    <div class="">
+                        <a>
+                            <div class="img-category" style="align-items: center;">
+                                <img src="../../../assets/img/assistant.jpg" alt="" class="" width="80%" height="80%">
+                            </div>
+                            <p class="">
+                            </p>
+                        </a>
+                    </div>
+                    <p class="button">Shomadhan Assistant</p>
+                </div>
+            </ngx-tile> -->
+
+
+            <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItems | sortBy:'SerialNo':'asc'; let i = index;"
+            (click)="innerLink(tile);" style="text-align: center; width: 150px">
+                <div class="wBg">
+                    <div class="">
+                        <a>
+                            <div class="img-category" style="align-items: center;">
+                                <img src="{{tile.RefImg}}" alt="" class="" width="80%" height="80%">
+                            </div>
+                            <p class="">
+                            </p>
+                        </a>
+                    </div>
+                    <p class="button">{{tile.Name}}</p>
+                </div>
+            </ngx-tile>
+            <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left1.png)"></button>
+            <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right1.png)"></button>
+        </ngx-carousel>
+    </div>
+</div>

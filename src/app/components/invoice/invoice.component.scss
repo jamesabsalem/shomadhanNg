@@ -1,0 +1,27 @@
+.navbar-desktop,
+.app_footer {
+  display: none !important;
+}
+
+app-navbar,
+app-footer {
+  display: none !important;
+}
+
+app-navbar + app-footer {
+  display: none !important;
+}
+
+@media print {
+  .doNotPrint {
+    display: none !important;
+  }
+
+  .footer_wrapper {
+    position: fixed;
+  }
+
+  .invoice_table thead th {
+    background: lightgray;
+  }
+}

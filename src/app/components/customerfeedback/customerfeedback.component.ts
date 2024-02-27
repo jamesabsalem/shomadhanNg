@@ -1,0 +1,138 @@
+import { Component, OnInit } from '@angular/core';
+import { NgxCarousel } from 'ngx-carousel';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+
+import { FeedbackService } from '../../shared/service/customer/feedback.service';
+import { HomeFeedBack } from '../../shared/model/homeFeedBack.model';
+import { CustomerReview } from '../../shared/model/customer-review.model';
+
+@Component({
+  selector: 'app-customerfeedback',
+  templateUrl: './customerfeedback.component.html',
+  styleUrls: ['./customerfeedback.component.scss'],
+  providers: [FeedbackService]
+})
+export class CustomerFeedbackComponent implements OnInit {
+  imgags: string[];
+  service_img: string[];
+  customerFeedBack: CustomerReview[];
+  public carouselBannerItems: Array<any> = [];
+  public carouselBanner: NgxCarousel;
+
+  public carouselTileItems: Array<any> = [];
+  public carouselTile: NgxCarousel;
+
+  public carouselTileOneItems: Array<any> = [];
+  public carouselTileOne: NgxCarousel;
+
+  public carouselTileTwoItems: Array<any> = [];
+  public carouselTileTwo: NgxCarousel;
+
+  constructor(private feedBackService: FeedbackService,
+     config: NgbRatingConfig) {
+    config.readonly = true;
+    config.max = 5;
+  }
+
+  ngOnInit() {
+    this.imgags = [];
+    this.service_img = [];
+    this.getReview();
+    this.carouselTileOne = {
+      grid: { xs: 2, sm: 3, md: 3, lg: 3, all: 0 },
+      speed: 600,
+      interval: 3000,
+      point: {
+        visible: true,
+        pointStyles: `
+            .ngxcarouselPoint {
+              list-style-type: none;
+              text-align: center;
+              padding: 12px;
+              margin: 0;
+              white-space: nowrap;
+              overflow: auto;
+              box-sizing: border-box;
+            }
+            .ngxcarouselPoint li {
+              display: inline-block;
+              border-radius: 50%;
+              background: #6b6b6b;
+              padding: 5px;
+              margin: 0 3px;
+              transition: .4s;
+            }
+            .ngxcarouselPoint li.active {
+                border: 2px solid rgba(0, 0, 0, 0.55);
+                transform: scale(1.2);
+                background: transparent;
+              }
+          `
+      },
+      load: 2,
+      loop: true,
+      touch: true,
+      easing: 'ease',
+      animation: 'lazy'
+    };
+
+    this.carouselTileTwo = {
+      grid: { xs: 2, sm: 3, md: 3, lg: 3, all: 0 },
+      speed: 600,
+      interval: 3000,
+      point: {
+        visible: true
+      },
+      load: 2,
+      touch: true
+    };
+
+    this.carouselBannerLoad();
+    this.carouselTileLoad();
+    this.carouselTileOneLoad();
+    this.carouselTileTwoLoad();
+  }
+  getReview() {
+    this.feedBackService.getCustomerFeedBack().subscribe(res => {
+      this.customerFeedBack = res;
+    })
+  }
+  public carouselBannerLoad() {
+    const len = this.carouselBannerItems.length;
+    if (len <= 4) {
+      for (let i = len; i < len + 5; i++) {
+        this.carouselBannerItems.push(
+          this.imgags[Math.floor(Math.random() * this.imgags.length)]
+        );
+      }
+    }
+  }
+
+  public carouselTileLoad() {
+    this.carouselTileItems = this.customerFeedBack;
+
+  }
+
+  public carouselTileOneLoad() {
+    const len = this.carouselTileOneItems.length;
+    if (len <= 30) {
+      for (let i = len; i < len + 15; i++) {
+        this.carouselTileOneItems.push(
+          this.imgags[Math.floor(Math.random() * this.imgags.length)]
+        );
+      }
+    }
+  }
+
+  public carouselTileTwoLoad() {
+    const len = this.carouselTileTwoItems.length;
+    if (len <= 30) {
+      for (let i = len; i < len + 15; i++) {
+        this.carouselTileTwoItems.push(
+          this.imgags[Math.floor(Math.random() * this.imgags.length)]
+        );
+      }
+    }
+  }
+}
+

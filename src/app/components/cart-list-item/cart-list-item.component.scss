@@ -1,0 +1,15 @@
+@import '~_variables.scss';
+
+.icon_btn {
+  padding: .5em;
+  font-size: 1.2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn_cart_arrow {
+  // color: $button_base_color;
+  color: gray;
+}

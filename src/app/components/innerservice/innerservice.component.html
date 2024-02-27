@@ -1,0 +1,24 @@
+<div class="section" style="border-top: 1px solid #e2e2e2;">
+  <div class="ongoing" style="display: flex;flex-flow: column;" *ngFor="let item of innerCategory;">
+    <div class="container">
+      <h2>{{item.Name}}</h2>
+      <ngx-carousel [inputs]="carouselTileTwo" (carouselLoad)="carouselTileTwoLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of innerCategoryDetails | mainServiceByinnterService:item.ServiceCategoryId; let i = index;">
+          <div class="wBg" (click)="innerLink(item.Name, tile.Name);">
+            <div class="">
+              <div *ngIf="tile.RefImg!='';else image">
+                <input class="tile imageStyle" type="button" [ngStyle]="{'background-image':'url(' + tile.RefImg + ')'}" />
+              </div>
+              <ng-template #image>
+                <input class="tile imageStyle" type="button" [ngStyle]="{'background-image':'url(assets/img/no_image_available.jpg)'}" />
+              </ng-template>
+            </div>
+            <h4 class="button">{{tile.Name}}</h4>
+          </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left1.png)"></button>
+        <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right1.png)"></button>
+      </ngx-carousel>
+    </div>
+  </div>
+</div>

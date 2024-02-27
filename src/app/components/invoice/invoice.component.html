@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="btn_print_wrapper">
+      <button (click)="onPrintClickHandler($event)" class="doNotPrint btn btn_print">Print</button>
+    </div>
+
+    <div class="inovice_details_wrapper">
+      <app-address-with-logo></app-address-with-logo>
+
+      <div class="invoice_details">
+
+        <div *ngIf="invoiceDetails" class="delivery_details d-flex justify-content-between">
+          <div class="bill_to_wrapper  d-flex flex-column">
+            <span class="bill_to">Bill To:</span>
+            <span class="name">{{invoiceDetails.DeliveryUserDetail.DeliveryName}}</span>
+            <span class="address">Address: {{invoiceDetails.DeliveryUserDetail.DeliveryAddress}}</span>
+            <span class="mobile">Mobile Number: {{invoiceDetails.DeliveryUserDetail.DeliveryMobile}}</span>
+            <span class="email">Email: {{invoiceDetails.DeliveryUserDetail.Email}}</span>
+          </div>
+          <div class="invoic_no_wrapper d-flex flex-column">
+            <span class="invoic">Invoic/Bill: {{invoiceDetails.OrderSummery.InvoiceBillNo}}</span>
+            <!-- <span class="date">Date: {{invoiceDetails.OrderSummery?.OrderPlaceDateTime | date:'dd-MM-yyyy'}}</span> -->
+            <span class="date">Date: {{invoiceDate}}</span>
+          </div>
+        </div>
+
+        <div *ngIf="invoiceDetails" class="order_id_wrapper  d-flex justify-content-between">
+          <div class="order_id">Order ID: {{invoiceDetails.OrderSummery.OrderId}}</div>
+          <div class="provider">Provider: {{invoiceDetails.OrderSummery.ProviderName}}</div>
+        </div>
+
+        <app-invoice-order-list *ngIf="invoiceDetails" [invoiceDetails]="invoiceDetails"></app-invoice-order-list>
+
+
+        <div *ngIf="invoiceDetails" class="total_amount_wrapper">
+          <div class="total_bill">
+            <span class="total_bill_text">Total Bill</span>
+            <span class="save_percent_text">{{getPercentage(invoiceDetails.OrderSummery.TotalOrderQty)}}% Save</span>
+            <span class="orginal_price_text">Tk {{invoiceDetails.OrderSummery.TotalServiceCharge}}</span>
+            <span class="after_discount_price_text">TK {{afterDiscountPrice(invoiceDetails)}}</span>
+          </div>
+          <div class="shomadhan_discount">
+            <span class="shomadhan_discount_text">Shomadhan Discount</span>
+            <span class="shomadhan_discount_amount">TK {{shomadhanDiscount}}</span>
+          </div>
+          <div class="payable_amount">
+            <span class="payable_amount_text">Payable Amount</span>
+            <span class="payable_amount_amount">TK {{afterTotalDiscountPrice - shomadhanDiscount}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_wrapper">
+        <app-invoice-footer></app-invoice-footer>
+      </div>
+    </div>
+
+  </div>
+</div>

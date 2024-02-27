@@ -1,0 +1,27 @@
+<ul class="list-unstyled service_partner_wrapper">
+  <li *ngFor="let servicePartner of servicePartners" class="media">
+    <img class="align-self-center mr-3 rounded-circle partner_imge" src="{{servicePartner.CompanyLogoUrl ? servicePartner.CompanyLogoUrl : '/assets/place-holder.svg'}}"
+      alt="Generic placeholder image">
+    <div class="media-body ">
+      <span class="company_info_wrapper">
+        <h6 class="mt-0 mb-1">{{servicePartner.Name}}</h6>
+        <div class="custom_media_body">
+          <span class="d-flex flex-column" style="font-size: 1.4em;">
+            <span><span class="badge badge-secondary custom_badge_size">{{servicePartner.Rating}}</span>
+              <ngb-rating [rate]="servicePartner.Rating"></ngb-rating>
+            </span>
+            <span style="font-size: .8rem">Starting price Tk. {{servicePartner.Price}}</span>
+          </span>
+          <!-- <button (click)="partnerLink($event, servicePartner.ServicePartnerId)" class="btn btn-outline-secondary btn-sm view_profile_button">View
+            Profile</button> -->
+
+            <a href="JavaScript:void(0);" [routerLink]="[partnerLink(servicePartner.ServicePartnerId)]" target="_blank"  class="btn btn-outline-secondary btn-sm view_profile_button">View
+              Profile</a>
+
+          <button (click)="onChosePartnerHandler(servicePartner)" [class.partner_active]="servicePartner.ServicePartnerId === selectedPartnerId"
+            class="btn btn-secondary btn-sm chose_partner">Chose Partner</button>
+        </div>
+      </span>
+    </div>
+  </li>
+</ul>

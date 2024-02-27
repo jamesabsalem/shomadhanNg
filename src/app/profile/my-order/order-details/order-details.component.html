@@ -1,0 +1,144 @@
+<div class="details-body" *ngIf="OrderDetails">
+  <div class="row">
+    <div class="col-12 border-bottom">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6">
+              <a (click)="onClickBack()">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+              <span class="header" style="margin-left: 5px;cursor: pointer;">Prefered Expert</span>
+            </div>
+
+            <div class="col-6">
+                <ngb-rating [rate]="OrderDetails.ExpertDetail?.ExpertRating" class="float-right">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                </ngb-rating>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-2">
+              <img class="dropbtn" class=" img img-circle img-responsive" style="width:100px;" [src]="OrderDetails.ExpertDetail?.ProfilePic" />
+            </div>
+            <div class="col-10">
+              <div class="row">
+                <div class="col-12 header">{{OrderDetails.ExpertDetail?.FullName}}</div>
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-6">{{OrderDetails.ExpertDetail?.CompanyName}}</div>
+                    <div class="col-3">
+                      <button class="btn btn-warning float-right btn-profile-view">VIEW PROFILE</button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-outline-warning float-right btn-call-expart">CALL EXPART</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 border-bottom">
+      <div class="row">
+
+        <div class="col-4">
+          <span class="header">Service Details :</span>
+          <img [src]="OrderDetails.OrderSummary?.RefImg" class="img img-responsive" style="width: 200px" alt="">
+        </div>
+        <div class="col-6">
+          <h6>Service Type:
+            <span>{{OrderDetails.OrderSummary?.InnerCategoryName}}</span>
+          </h6>
+          <p>Selected Services: </p>
+          <ul *ngFor="let orderList of OrderDetails.OrderDetailList">
+            <li>{{orderList.SubcategoryOptionName}}</li>
+          </ul>
+          <h6>Schedule Date:
+            <span>{{OrderDetails.OrderSummary?.ServiceScheduleDate}}</span>
+          </h6>
+          <h6>Preferred Time:
+            <span>{{OrderDetails.OrderSummary?.TimeSlot}}</span>
+          </h6>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-outline-warning float-right btn-reschedule">Reschedule</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-12 border-bottom">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="header">Progress</h4>
+          <ul class="timeline">
+            <li>
+              <a>Order Placed Successfully</a>
+              <p>22 April 2018 | 1.00 PM</p>
+              <p>Your order has been placed and a Shomadhan expert will be assinged to your order shortly</p>
+            </li>
+            <li>
+              <a>Expert Assigned</a>
+              <p>Raju Ahmed has been appointed to serve your taks</p>
+            </li>
+            <li>
+              <a>Work Start</a>
+              <p>3.00 PM - 4.00 PM</p>
+            </li>
+            <li>
+              <a>Order Served</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 border-bottom" style="margin-bottom: 5px">
+      <div class="row">
+        <div class="col-12">
+          Payment Details
+        </div>
+        <div class="col-12 border-bottom">
+          <ul style="list-style: none;" *ngFor="let orderList of OrderDetails.OrderDetailList">
+            <li>
+              <div class="row">
+                <div class="col-6">
+                  <span class="float-left">{{orderList.SubcategoryOptionName}}</span>
+                </div>
+                <div class="col-6">
+                  <span class="float-right">{{orderList.UnitOrderPrice}} TK</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6">
+              <span class="float-left">Total Payable Amount</span>
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{OrderDetails.OrderSummary?.TotalServiceCharge}} TK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 text-center" style="margin-bottom: 5px">
+          <!-- <button (click)="onOpenInvoiceClickHandler($event)" class="btn btn-warning btn-invoice">Invoice</button> -->
+          <a href="JavaScript:void(0);" [routerLink]="[getInvoiceRouterLink()]" target="_blank" class="btn btn-warning btn-invoice">Invoice</a>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn btn-payment" (click)="onClickPayment()">Payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="order_summay_wrapper">
+
+  <div class="service_info_wrapper">
+    <div class="title_service_info">
+      <h6 class="text_style"><i class="fa fa-cog gear_icon" aria-hidden="true"></i>&nbsp;Service info</h6>
+    </div>
+    <div *ngIf="assistantInnerCategory" class="service_info_child_wrapper">
+      <ul class="list-group">
+        <li class="list-group-item">Service: <span class="item_text">{{assistantInnerCategory.Name}}</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="customerInfo" class="delivery_info_wrapper">
+
+      <div class="title_service_info">
+        <h6 class="text_style"><i class="fa fa-shopping-bag gear_icon" aria-hidden="true"></i>&nbsp;Delivery info</h6>
+      </div>
+      <div class="delivery_info_child_wrapper">
+        <ul class="list-group">
+          <li class="list-group-item">Name: <span class="item_text">{{customerInfo.FullName}}</span></li>
+          <li class="list-group-item">Phone: <span class="item_text">{{customerInfo.Mobile}}</span></li>
+          <li class="list-group-item">Email: <span class="item_text">{{customerInfo.Email}}</span></li>
+          <li class="list-group-item">Address: <span class="item_text">{{customerInfo.Address1}}</span>
+            <!-- <span class="edit_address edit_icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>-->
+        </li>
+        </ul>
+      </div>
+    </div>
+</div>

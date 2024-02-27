@@ -1,0 +1,31 @@
+<!-- {{deliveryDetailsForm.value | json}} -->
+<form [formGroup]="deliveryDetailsForm" class="schedule_date_form p-3" autocomplete="off">
+  <div class="pt-2">
+    <input formControlName="name" class="form-control pt-2" type="text" placeholder="Delivery Name">
+  </div>
+  <div class="pt-2">
+    <input formControlName="mobile" name="fakeMob" class="form-control pt-2" type="text" placeholder="Mobile">
+  </div>
+
+  <div class="pb-4 pt-4">Set Your Address</div>
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input formControlName="isOldNewAddress" type="radio" name="isOldNewAddress" value="old" aria-label=" " class="custom_radio_btn_size">
+      </div>
+    </div>
+    <input (focus)="onOldAddressFocusHandler($event)" formControlName="oldAddress" name="fakeaddold" type="text" class="form-control" aria-label=" " placeholder="Old Address"  autocomplete="off">
+  </div>
+
+  <div class="input-group pt-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input formControlName="isOldNewAddress" value="new" type="radio" name="isOldNewAddress" aria-label=" " class="custom_radio_btn_size">
+      </div>
+    </div>
+    <input (focus)="onNewAddressFocusHandler($event)" formControlName="newAddress" name="fakeaddnew" type="text" class="form-control" aria-label=" " placeholder="New Address" autocomplete="off">
+  </div>
+
+</form>
+

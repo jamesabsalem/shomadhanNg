@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-static-top navbar-desktop" color-on-scroll="500">
+    <div class="container-fluid">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']">
+                <img src="assets/img/home/navbar/logo_shomadhan.png" width="40%">
+            </a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item text-black" >
+                    <a  [routerLink]="['/home']" pageScroll href="#appDownload" style="padding-top: 0px;"  class="nav-link">
+                        <i class="app-download-icon"></i>Download App
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link text-black" (click)="onClickLocation()" style="padding-top: 0px; cursor: pointer;"
+                        rel="tooltip" title="Location" data-placement="bottom">
+                        <i class="location-icon"></i>{{selectLocation}}
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="!visibleNavbar.isSignUp">
+                    <a class="nav-link" (click)="btnSignUp();" rel="tooltip" class="btn btn-outline-warning text-black btn-nav"
+                        style="color: #66615B;" title="Sign Up" data-placement="bottom" target="_blank">
+                        Sign Up
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="!visibleNavbar.isSign">
+                    <a class="nav-link" (click)="btnSignIn();" rel="tooltip" class="btn btn-outline-warning  text-black btn-nav"
+                        style="color: #66615B;" title="Sign In" data-placement="bottom" target="_blank">
+                        Sign In
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="!visibleNavbar.isUser">
+                    <div class="dropdown">
+                        <!-- <button class="dropbtn">Dropdown</button> -->
+
+                        <div *ngIf="customerPhoto;else other_content">
+                            <img class="dropbtn" class="btn btn-outline-warning img img-circle img-responsive" style="width:45px;"
+                                [src]="customerPhoto" />
+                        </div>
+
+                        <ng-template #other_content>
+                            <p class="btn btn-neutral" style="color: #FBC658">{{customerName}}</p>
+                        </ng-template>
+                        <div class="dropdown-content">
+                            <a routerLink="profile/my-profile">My Profile</a>
+                            <a routerLink="profile/my-order">My Order</a>
+                            <a routerLink="profile/my-wallet">My Wallet</a>
+                            <a routerLink="profile/refer-earn">Refer & Earn</a>
+                            <a routerLink="profile/promotions">Promotions</a>
+                            <a (click)="onClickLogOut()" style="cursor: pointer;">Log out</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item" [hidden]="!visibleNavbar.isCart">
+                    <a (click)="onCartClickHandler()" href="JavaScript:void(0);" class="nav-link nav-icon-link" rel="tooltip" title="Cart" data-placement="bottom">
+                        <i class="img-responsive cart-icon"></i><span class="badge badge_base_color">{{cartCount}}</span>
+                        <p class="d-lg-none">Cart</p>
+                    </a>
+                </li>
+                <li class="nav-item" [hidden]="!visibleNavbar.isNotification">
+                    <!-- <a class="nav-link nav-icon-link" rel="tooltip" title="Notification" data-placement="bottom">
+                        <i class="notification-icon"></i><span class="label-warning">{{notivicationCount}}</span>
+                        <p class="d-lg-none">Notification</p>
+                    </a> -->
+
+
+
+
+
+
+                    <div class="navbar-default dropdown">
+                        <a href="#" class="nav-link nav-icon-link" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="notification-icon"></i><span class="badge badge_base_color">{{notivicationCount}}</span>
+                            <p class="d-lg-none">Notification</p>
+                        </a>
+                        <ul *ngIf="notivicationCount" class="dropdown-menu notify-drop">
+                            <div class="notify-drop-title">
+                                <div class="row">
+                                    <div class="col-md col-sm-6 col-xs-6">Unseen (<b>{{notivicationCount}}</b>)</div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 text-right"><a href="" class="rIcon allRead"
+                                            data-tooltip="tooltip" data-placement="bottom" title="tümü okundu."></a></div>
+                                </div>
+                            </div>
+                            <!-- end notify title -->
+                            <!-- notify content -->
+                            <div class="drop-content">
+                                <li *ngFor="let notification of notifications">
+
+                                    <div class="col-12">
+                                        <h6>{{notification.Text}}</h6>
+
+                                        <hr>
+                                        <p class="time">{{notification.DateAdded | date}}</p>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="notify-drop-footer text-center">
+                                <a><i class="fa fa-eye"></i> close</a>
+                            </div>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

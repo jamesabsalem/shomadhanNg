@@ -1,0 +1,76 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <div class="row">
+
+      <div class="offset-4 col-md-4">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Edit Profile</h5>
+      </div>
+      <div class="col-md-4">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClickClose()">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <form #updateForm="ngForm" *ngIf="customer">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="FullName.invalid && FullName.touched" [class.has-success]="FullName.valid">
+            <input type="text" #FullName="ngModel" [(ngModel)]="customer.FullName" name="FullName" required class="form-control"
+              placeholder="Full Name">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="Mobile.invalid && Mobile.touched" [class.has-success]="Mobile.valid">
+            <input type="text" #Mobile="ngModel" value="customer.Mobile" [(ngModel)]="customer.Mobile" name="Mobile"
+              required class="form-control" placeholder="Mobile Number">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="Email.invalid && Email.touched" [class.has-success]="Email.valid">
+            <input type="text" #Email="ngModel" value="customer.Email" [(ngModel)]="customer.Email" name="Email"
+              required class="form-control" placeholder="Email Address">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="Address1.invalid && Address1.touched" [class.has-success]="Address1.valid">
+            <input type="text" #Address1="ngModel" value="customer.Address1" [(ngModel)]="customer.Address1" name="Address1"
+              required class="form-control" placeholder="Address">
+          </div>
+        </div>
+        <!-- <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="DateOfBirth.invalid && DateOfBirth.touched" [class.has-success]="DateOfBirth.valid">
+            <input type="text" #DateOfBirth="ngModel" [(ngModel)]="customer.DateOfBirth" name="DateOfBirth" required
+              class="form-control" placeholder="Date Of Birth">
+          </div>
+        </div> -->
+        <div class="col-md-12">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="DateOfBirth" #DateOfBirth="ngModel" [(ngModel)]="customer.DateOfBirth"
+              ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-warning fa fa-calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group" [class.has-danger]="Gender.invalid && Gender.touched" [class.has-success]="Gender.valid">
+            <input type="text" #Gender="ngModel" value="customer.Gender" [(ngModel)]="customer.Gender" name="Gender"
+              required class="form-control" placeholder="Gender">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <button (click)="onClickUpdate()" [disabled]="updateForm.invalid" class="btn btn-warning btn-block btn-signin">Update</button>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>

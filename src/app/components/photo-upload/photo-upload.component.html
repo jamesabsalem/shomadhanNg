@@ -1,0 +1,20 @@
+<div class="file_input_wrapper d-flex justify-content-between">
+  <span class="text-left">
+    Would you like to add some pictures?<br/> It's optional but helpful
+  </span>
+  <label id="#bb" class="align-middle">
+    <i class="fa fa-camera-retro" aria-hidden="true"></i> Add Photo
+    <input type="file" id="File" size="60" (change)="onSelectFile($event)" #fileInput>
+  </label>
+</div>
+
+<br/>
+
+<div class="image_container">
+  <span *ngFor="let file of files" class="image_preview_wrapper">
+    <img [src]="file.preview" height="180" width="120"> <br/>
+    <button type="button" class="delete_btn" (click)="onDelete(file)">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+  </span>
+</div>

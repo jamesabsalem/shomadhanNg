@@ -1,0 +1,32 @@
+<div class="custom_modal_header rounded-0" style="height: 60px;">
+  <span>
+    <!-- <i class="fa fa-arrow-left fa-lg modal_back_btn" aria-hidden="true"></i> -->
+  </span>
+  <span class="caption_text">Cart Items</span>
+  <span class="close p-0 m-0" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div>
+
+<div class="modal-body rounded-0 custom_modal_body">
+  <div scrollSpyElement="test" style="max-height: 475px;width: 100%; overflow: auto;">
+    <ul class="list-group list-group-flush" id="test">
+      <li *ngFor="let cartItem of allCartItems" class="list-group-item d-flex justify-content-between align-items-center"
+        (click)="onShowOrderPlacement(cartItem)">
+        <span class="d-flex">
+          <img class="media-object" width="80" height="80" src="{{cartItem.SubCategroy.RefImg ? cartItem.SubCategroy.RefImg : '/assets/img/img-placeholder.png'}}"
+            alt=" " />
+          <span class="category_name_caption p-2 d-flex flex-column">
+            <span>Service Type: {{cartItem.SubCategroy.Name}}</span>
+            <span>Selected Services: </span>
+            <span *ngFor="let service of cartItem.CartOrderData.ServiceOptionList">* {{service.ServiceType}}</span>
+          </span>
+        </span>
+        <span class="d-flex flex-column">
+          <i (click)="removeCartItemFromCookie(cartItem)" class="fa fa-trash icon_btn text-danger" aria-hidden="true"></i>
+          <i (click)="onOrderPlacementClickHandler(cartItem)" class="fa fa-chevron-right icon_btn btn_cart_arrow" aria-hidden="true"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

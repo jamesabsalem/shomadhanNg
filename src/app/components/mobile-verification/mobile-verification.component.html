@@ -1,0 +1,46 @@
+<!-- enter mobile number for verification -->
+<div class="modal-body" [hidden]="windowRef.confirmationResult">
+  <form>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber" id="phoneNumber" required class="form-control"
+            placeholder="+880 Enter your mobile number">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <div [hidden]="user">
+            <div id="recaptcha-container" class="text-center"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <button type="submit" class="btn btn-warning btn-block btn-signin" (click)="sendLoginCode()">Send Code</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- enter verification code -->
+<div>
+  <!-- *ngIf="windowRef.confirmationResult" -->
+  <div *ngIf="windowRef.confirmationResult" class="modal-body">
+    <div class="modal-header">
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Varification Code</h5>
+          <h6 class="modal-title text-center" id="exampleModalLabel" style="font-weight: bold">Please enter the code
+            which send to you</h6>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input required class="form-control" type="text" name="code" [(ngModel)]="verificationCode" placeholder="enter code">
+    </div>
+    <div class="form-group">
+      <button (click)="verifyLoginCode()" class="btn btn-warning btn-block btn-signin">Verify</button>
+    </div>
+  </div>
+</div>

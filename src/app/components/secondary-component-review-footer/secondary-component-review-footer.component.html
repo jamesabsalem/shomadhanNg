@@ -1,0 +1,40 @@
+<div class="section" class="customer-review">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="secondary-content h-100">
+          <ngb-tabset>
+            <ngb-tab *ngIf="showHideAssistant" title="Shomadhan Assistant">
+              <ng-template ngbTabContent>
+                <h6>Shomadhan assistant</h6>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Customer Reviews">
+              <ng-template ngbTabContent>
+                <app-customerreviews></app-customerreviews>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Hiring Policy">
+              <ng-template ngbTabContent>
+                <h6>comming soong hiring policy</h6>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="FAQ">
+              <ng-template ngbTabContent>
+                <h6>comming soong FAQ</h6>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="secondary-content">
+          <app-recomandedservice></app-recomandedservice>
+        </div>
+        <div class="secondary-content">
+          <app-availableareas></app-availableareas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

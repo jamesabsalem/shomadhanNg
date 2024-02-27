@@ -1,0 +1,109 @@
+<!--Begin Partner Details Information -->
+<div *ngIf="partner">
+  <section>
+    <div class="partner-header">
+      <h5 class="header-title">Partner Details</h5>
+    </div>
+    <div class="partner-body">
+      <div class="row">
+        <div class="col-md-12 ml-auto mr-auto text-center">
+          <img src="../../../assets//img//profile//icon_profile.png" style="width: 100px;" class="img img-circle btn btn-outline-warning"
+            alt="">
+          <h6 class="font-weight-bold">{{partner.CompanyName}}</h6>
+          <h6 class="font-weight-bold">{{partner.Location}}</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Begin Partner basic Information -->
+  <section>
+    <div class="partner-header">
+      <h5 class="header-title">Basic Info</h5>
+    </div>
+    <div class="partner-body">
+      <div class="row text-center">
+        <div class="col-4 ml-auto mr-auto">
+          <div>Job Served</div>
+          <div>{{partner.JobServed}}</div>
+        </div>
+        <div class="col-4 ml-auto mr-auto">
+          <div>Available Resource</div>
+          <div>{{partner.AvaibleResource}}</div>
+        </div>
+        <div class="col-4 ml-auto mr-auto">
+          <div>Partner Experience</div>
+          <div>{{partner.ExperienceYear}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Begin Partner Available Service -->
+  <section>
+    <div class="partner-header">
+      <h5 class="header-title">Available Service</h5>
+    </div>
+    <div class="partner-body">
+      <div class="">
+        <div class="container" style="max-width: 1300px; display: flex;flex-flow: column;">
+          <ngx-carousel [inputs]="carouselTileTwo" (carouselLoad)="carouselTileTwoLoad()">
+            <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItems; let i = index;">
+              <div class="wBg text-center">
+                <div>
+                  <a>
+                    <div class="img-service">
+                      <img src="{{tile.ImageUrl}}" alt="" class="img img-container">
+                    </div>
+                  </a>
+                </div>
+                <p class="button">{{tile.ServiceName}}</p>
+              </div>
+            </ngx-tile>
+            <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left1.png)"></button>
+            <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right1.png)"></button>
+          </ngx-carousel>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Begin Partner Available Schedule -->
+  <section>
+    <div class="partner-header">
+      <h5 class="header-title">Available Schedule</h5>
+    </div>
+    <div class="partner-body">
+      <div class="row text-center">  
+      </div>
+    </div>
+  </section>
+  <!--Begin Partner Available Expart -->
+  <section>
+    <div class="partner-header">
+      <h5 class="header-title">Available Expart</h5>
+    </div>
+    <div class="partner-body">
+      <div class="">
+        <div class="container" style="max-width: 1300px; display: flex;flex-flow: column;">
+          <ngx-carousel [inputs]="carouselTileTwoExpart" (carouselLoad)="carouselTileTwoLoadExpart()">
+            <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItemsExpart; let i = index;">
+              <div class="wBg text-center">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-5">
+                      <img src="{{tile.ProfilePic}}" class="btn btn-outline-warning img img-circle img-responsive">
+                    </div>
+                    <div class="col-7">
+                      <h6>{{tile.FullName}}</h6>
+                      <span class="label label-success">{{tile.ExpertRating}} &#9733;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ngx-tile>
+            <button NgxCarouselPrev class="leftRs" style="background: url(assets/img/Arrow-left1.png)"></button>
+            <button NgxCarouselNext class="rightRs" style="background: url(assets/img/Arrow-right1.png)"></button>
+          </ngx-carousel>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
